@@ -1,0 +1,9 @@
+name: Adminium
+version: 0.1
+main: com.fiveeus.adminium.main
+author: 5EUS
+api-version: 1.17
+commands:
+  staff:
+    description: Toggles staff mode
+    usage: <command>
