@@ -11,8 +11,10 @@ public class playerBlockPlace implements Listener {
     @EventHandler
     public static void onPlace(BlockPlaceEvent e) {
         if (staff.getStaffModeList().get(e.getPlayer())) {
-            e.getPlayer().spawnParticle(Particle.SMOKE_LARGE, e.getBlock().getLocation(), 4);
-            e.setCancelled(true);
+            if (!rightClickAir.getBuildMode().get(e.getPlayer())) {
+                e.getPlayer().spawnParticle(Particle.SMOKE_LARGE, e.getBlock().getLocation(), 4);
+                e.setCancelled(true);
+            }
         }
 
     }

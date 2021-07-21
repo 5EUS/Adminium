@@ -1,6 +1,9 @@
 package com.fiveeus.adminium.commands;
 
 import com.fiveeus.adminium.Config;
+import com.fiveeus.adminium.events.rightClickAir;
+import com.fiveeus.adminium.main;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -43,11 +46,15 @@ public class staff implements CommandExecutor {
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', config.prefix + "&7Staff mode enabled."));
 
                     staffmode.put(player, true);
+                    rightClickAir.getBuildMode().put(player, false);
                     inventory.put(player, player.getInventory().getContents());
 
                     player.getInventory().clear();
 
                     giveInventory(player);
+                    for (Player victim : Bukkit.getOnlinePlayers()) {
+                        player.hidePlayer(main.getPlugin(), victim);
+                    }
 
 
                 } else if (staffmode.get(player)) {
@@ -56,19 +63,24 @@ public class staff implements CommandExecutor {
                     staffmode.put(player, false);
 
                     player.getInventory().setContents(inventory.get(player));
-
+                    giveInventory(player);
+                    for (Player victim : Bukkit.getOnlinePlayers()) {
+                        player.showPlayer(main.getPlugin(), victim);
+                    }
 
                 } else {
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', config.prefix + "&7Staff mode enabled."));
                     staffmode.put(player, true);
-
-                    staffmode.put(player, true);
+                    rightClickAir.getBuildMode().put(player, false);
                     inventory.put(player, player.getInventory().getContents());
 
                     player.getInventory().clear();
 
                     giveInventory(player);
-
+                    giveInventory(player);
+                    for (Player victim : Bukkit.getOnlinePlayers()) {
+                        player.hidePlayer(main.getPlugin(), victim);
+                    }
                 }
 
 
@@ -97,6 +109,9 @@ public class staff implements CommandExecutor {
 
 
         player.getInventory().setItem(0, createItem(ChatColor.GREEN + "Build mode", Material.GRASS_BLOCK,
+                Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
+
+        player.getInventory().setItem(1, createItem(ChatColor.GRAY + "Vanished", Material.GLASS,
                 Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
 
     }

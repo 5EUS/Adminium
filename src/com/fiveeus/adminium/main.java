@@ -3,14 +3,12 @@ package com.fiveeus.adminium;
 import com.fiveeus.adminium.commands.staff;
 import com.fiveeus.adminium.events.playerBlockBreak;
 import com.fiveeus.adminium.events.playerBlockPlace;
-import org.bukkit.ChatColor;
-import org.bukkit.configuration.InvalidConfigurationException;
+import com.fiveeus.adminium.events.rightClickAir;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.logging.Logger;
 
 public class main extends JavaPlugin {
@@ -61,6 +59,7 @@ public class main extends JavaPlugin {
         this.getCommand("staff").setExecutor(new staff());
         this.getServer().getPluginManager().registerEvents(new playerBlockPlace(), this);
         this.getServer().getPluginManager().registerEvents(new playerBlockBreak(), this);
+        this.getServer().getPluginManager().registerEvents(new rightClickAir(), this);
     }
 
 //    public void reloadConfig() {
