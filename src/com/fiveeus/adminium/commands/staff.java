@@ -53,7 +53,7 @@ public class staff implements CommandExecutor {
 
                     giveInventory(player);
                     for (Player victim : Bukkit.getOnlinePlayers()) {
-                        player.hidePlayer(main.getPlugin(), victim);
+                        victim.hidePlayer(main.getPlugin(), player);
                     }
 
 
@@ -65,7 +65,7 @@ public class staff implements CommandExecutor {
                     player.getInventory().setContents(inventory.get(player));
                     giveInventory(player);
                     for (Player victim : Bukkit.getOnlinePlayers()) {
-                        player.showPlayer(main.getPlugin(), victim);
+                        victim.showPlayer(main.getPlugin(), player);
                     }
 
                 } else {
@@ -79,7 +79,7 @@ public class staff implements CommandExecutor {
                     giveInventory(player);
                     giveInventory(player);
                     for (Player victim : Bukkit.getOnlinePlayers()) {
-                        player.hidePlayer(main.getPlugin(), victim);
+                        victim.hidePlayer(main.getPlugin(), player);
                     }
                 }
 
@@ -112,6 +112,12 @@ public class staff implements CommandExecutor {
                 Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
 
         player.getInventory().setItem(1, createItem(ChatColor.GRAY + "Vanished", Material.GLASS,
+                Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
+
+        player.getInventory().setItem(2, createItem(ChatColor.DARK_RED + "Ban Hammer", Material.DIAMOND_AXE,
+                Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
+
+        player.getInventory().setItem(3, createItem(ChatColor.BLUE + "Random Teleport", Material.LEAD,
                 Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
 
     }
