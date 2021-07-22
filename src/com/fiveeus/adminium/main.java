@@ -1,10 +1,7 @@
 package com.fiveeus.adminium;
 
 import com.fiveeus.adminium.commands.staff;
-import com.fiveeus.adminium.events.playerBlockBreak;
-import com.fiveeus.adminium.events.playerBlockPlace;
-import com.fiveeus.adminium.events.rightClickAir;
-import com.fiveeus.adminium.events.rightClickPlayer;
+import com.fiveeus.adminium.events.*;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -62,6 +59,7 @@ public class main extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new playerBlockBreak(), this);
         this.getServer().getPluginManager().registerEvents(new rightClickAir(), this);
         this.getServer().getPluginManager().registerEvents(new rightClickPlayer(), this);
+        this.getServer().getPluginManager().registerEvents(new playerDrop(), this);
     }
 
 //    public void reloadConfig() {
