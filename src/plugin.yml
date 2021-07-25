@@ -7,3 +7,6 @@ commands:
   staff:
     description: Toggles staff mode
     usage: <command>
+  pman:
+    description: Manage players
+    usage: <command> <player>

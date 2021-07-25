@@ -1,5 +1,6 @@
 package com.fiveeus.adminium;
 
+import com.fiveeus.adminium.commands.pman;
 import com.fiveeus.adminium.commands.staff;
 import com.fiveeus.adminium.events.*;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -55,11 +56,13 @@ public class main extends JavaPlugin {
 
     private void registerCommands() {
         this.getCommand("staff").setExecutor(new staff());
+        this.getCommand("pman").setExecutor(new pman());
         this.getServer().getPluginManager().registerEvents(new playerBlockPlace(), this);
         this.getServer().getPluginManager().registerEvents(new playerBlockBreak(), this);
         this.getServer().getPluginManager().registerEvents(new rightClickAir(), this);
         this.getServer().getPluginManager().registerEvents(new rightClickPlayer(), this);
         this.getServer().getPluginManager().registerEvents(new playerDrop(), this);
+        this.getServer().getPluginManager().registerEvents(new playerInvClick(), this);
     }
 
 //    public void reloadConfig() {

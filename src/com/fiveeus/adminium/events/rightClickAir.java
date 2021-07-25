@@ -2,6 +2,7 @@ package com.fiveeus.adminium.events;
 
 import com.fiveeus.adminium.Config;
 import com.fiveeus.adminium.commands.staff;
+import com.fiveeus.adminium.inventories.playerList;
 import com.fiveeus.adminium.main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -27,6 +28,9 @@ public class rightClickAir implements Listener {
 
     private static HashMap<Player, Boolean> visible = new HashMap<>();
     public static HashMap<Player, Boolean> getVisible() {return visible;}
+
+    private static HashMap<Player, Integer> page = new HashMap<>();
+    public static HashMap<Player, Integer> getPage() {return page;}
 
     @EventHandler
     public static void onPlace(PlayerInteractEvent e) {
@@ -92,6 +96,12 @@ public class rightClickAir implements Listener {
 
                     }
                 }
+            } else if (e.getItem().getType() == Material.PLAYER_HEAD) {
+                getPage().putIfAbsent(player, 1);
+                playerList gui = new playerList(getPage().get(player));
+                player.openInventory(gui.getInventory());
+
+
             }
         }
     }

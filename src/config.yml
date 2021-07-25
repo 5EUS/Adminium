@@ -1,3 +1,4 @@
 prefix: "&c&lADMINIUM &8> "
 no-permission: "&cInsufficient permissions."
 main-permission: admin.main
+pman-permission: admin.pman

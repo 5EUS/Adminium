@@ -120,6 +120,9 @@ public class staff implements CommandExecutor {
         player.getInventory().setItem(3, createItem(ChatColor.BLUE + "Random Teleport", Material.LEAD,
                 Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
 
+        player.getInventory().setItem(4, createItem(ChatColor.DARK_AQUA + "Player List", Material.PLAYER_HEAD,
+                Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
+
     }
 
 
