@@ -28,11 +28,13 @@ public class pman implements CommandExecutor {
             if (player.hasPermission(config.pman_perm)) {
                 if (args.length == 1) {
                     Player target = Bukkit.getPlayer(args[0]);
-                    if (target.isOnline()) {
-                        pManMenu gui = new pManMenu(target);
-                        player.openInventory(gui.getInventory());
-                    }
+                    if (target != null) {
+                        if (target.isOnline()) {
+                            pManMenu gui = new pManMenu(target);
+                            player.openInventory(gui.getInventory());
 
+                        }
+                    }
                 } else if (args.length == 0) {
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', config.prefix + "&7No player specified!"));
 

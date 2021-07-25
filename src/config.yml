@@ -1,4 +1,15 @@
+# Adminium by 5EUS
+
+# Messages
 prefix: "&c&lADMINIUM &8> "
 no-permission: "&cInsufficient permissions."
+leave-ban-reason: "&cLeaving while frozen."
+appeal: "ADD APPEAL SOURCE HERE"
+frozen: "&7You have been frozen! Do not leave or you will be banned!"
+unfrozen: "&7You have been unfrozen."
+
+# Permissions
 main-permission: admin.main
 pman-permission: admin.pman
+freeze-permission: admin.freeze
+

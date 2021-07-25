@@ -10,3 +10,6 @@ commands:
   pman:
     description: Manage players
     usage: <command> <player>
+  freeze:
+    description: Freeze or unfreeze players
+    usage: <command> <player>

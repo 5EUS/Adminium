@@ -1,5 +1,7 @@
 package com.fiveeus.adminium.events;
 
+import com.fiveeus.adminium.Config;
+import com.fiveeus.adminium.commands.freeze;
 import com.fiveeus.adminium.commands.staff;
 import com.fiveeus.adminium.inventories.banMenu;
 import com.fiveeus.adminium.inventories.pManMenu;
@@ -36,6 +38,8 @@ public class playerInvClick implements Listener {
 
             if (staff.getStaffModeList().get(player)) {
 
+                Config config = new Config();
+
                 if (Objects.requireNonNull(type == Material.LIGHT_GRAY_STAINED_GLASS_PANE)) {
                     e.setCancelled(true);
 
@@ -69,6 +73,10 @@ public class playerInvClick implements Listener {
                     } else if (Objects.requireNonNull(type == Material.LEAD)) {
                         player.teleport(t);
                         player.playSound(player.getLocation(), Sound.ENTITY_ENDER_EYE_DEATH, 500.0f, 1.0f);
+
+                    } else if (Objects.requireNonNull(type == Material.PACKED_ICE)) {
+                        freeze.freezePlayer(t, player);
+                        e.setCancelled(true);
 
                     }
 

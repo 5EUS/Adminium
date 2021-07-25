@@ -59,7 +59,7 @@ public class rightClickAir implements Listener {
                 if (!visible.containsKey(player)) {
                     visible.put(player, false);
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', config.prefix + "&7You are now visible."));
-                    player.getInventory().setItem(1, createItem(ChatColor.GRAY + "Vanished", Material.GLASS,
+                    player.getInventory().setItem(1, createItem(ChatColor.BLACK + "Visible", Material.OBSIDIAN,
                             Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
                     for (Player victim : Bukkit.getOnlinePlayers()) {
                         victim.showPlayer(main.getPlugin(), player);
@@ -68,7 +68,7 @@ public class rightClickAir implements Listener {
                 } else if (visible.get(player)) {
                     visible.put(player, false);
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', config.prefix + "&7You are now visible."));
-                    player.getInventory().setItem(1, createItem(ChatColor.GRAY + "Vanished", Material.GLASS,
+                    player.getInventory().setItem(1, createItem(ChatColor.BLACK + "Visible", Material.OBSIDIAN,
                             Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
                     for (Player victim : Bukkit.getOnlinePlayers()) {
                         victim.showPlayer(main.getPlugin(), player);
@@ -76,7 +76,7 @@ public class rightClickAir implements Listener {
                 } else {
                     visible.put(player, true);
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', config.prefix + "&7You are now hidden."));
-                    player.getInventory().setItem(1, createItem(ChatColor.BLACK + "Visible", Material.OBSIDIAN,
+                    player.getInventory().setItem(1, createItem(ChatColor.GRAY + "Vanished", Material.GLASS,
                             Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
                     for (Player victim : Bukkit.getOnlinePlayers()) {
                         victim.hidePlayer(main.getPlugin(), player);

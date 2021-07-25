@@ -111,16 +111,16 @@ public class staff implements CommandExecutor {
         player.getInventory().setItem(0, createItem(ChatColor.GREEN + "Build mode", Material.GRASS_BLOCK,
                 Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
 
-        player.getInventory().setItem(1, createItem(ChatColor.GRAY + "Vanished", Material.GLASS,
+        player.getInventory().setItem(2, createItem(ChatColor.GRAY + "Vanished", Material.GLASS,
                 Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
 
-        player.getInventory().setItem(2, createItem(ChatColor.DARK_RED + "Ban Hammer", Material.DIAMOND_AXE,
+        player.getInventory().setItem(4, createItem(ChatColor.DARK_RED + "Ban Hammer", Material.DIAMOND_AXE,
                 Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
 
-        player.getInventory().setItem(3, createItem(ChatColor.BLUE + "Random Teleport", Material.LEAD,
+        player.getInventory().setItem(6, createItem(ChatColor.BLUE + "Random Teleport", Material.LEAD,
                 Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
 
-        player.getInventory().setItem(4, createItem(ChatColor.DARK_AQUA + "Player List", Material.PLAYER_HEAD,
+        player.getInventory().setItem(8, createItem(ChatColor.DARK_AQUA + "Player List", Material.PLAYER_HEAD,
                 Collections.singletonList(ChatColor.DARK_GRAY + "(" + ChatColor.GRAY + "Right click" + ChatColor.DARK_GRAY + ")")));
 
     }
